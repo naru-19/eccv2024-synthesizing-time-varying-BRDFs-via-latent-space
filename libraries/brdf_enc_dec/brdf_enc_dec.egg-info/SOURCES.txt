@@ -1,0 +1,7 @@
+setup.py
+brdf_enc_dec/__init__.py
+brdf_enc_dec/model.py
+brdf_enc_dec.egg-info/PKG-INFO
+brdf_enc_dec.egg-info/SOURCES.txt
+brdf_enc_dec.egg-info/dependency_links.txt
+brdf_enc_dec.egg-info/top_level.txt

@@ -1,0 +1,9 @@
+setup.py
+slib/__init__.py
+slib/brdf.py
+slib/brdf_io.py
+slib/utils.py
+slib.egg-info/PKG-INFO
+slib.egg-info/SOURCES.txt
+slib.egg-info/dependency_links.txt
+slib.egg-info/top_level.txt

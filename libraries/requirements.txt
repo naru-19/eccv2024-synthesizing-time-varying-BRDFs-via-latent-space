@@ -1,0 +1,2 @@
+-e slib/
+-e brdf_enc_dec/

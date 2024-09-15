@@ -7,6 +7,7 @@ build:
 .PHONY: run
 run: build
 	docker run -it --rm --name synthesize_tvbrdf \
+		--gpus '"device=all"' \
 		-v $(shell pwd):/app \
 		-v $(shell pwd)/model_weights:/app/model_weights \
 		synthesize_tvbrdf:latest	

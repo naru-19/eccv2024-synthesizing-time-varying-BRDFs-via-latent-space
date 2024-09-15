@@ -2,6 +2,15 @@ import numpy as np
 from scipy.spatial.transform import Rotation
 from tqdm import tqdm
 
+def get_merl_angles():
+    h = np.arange(90) / 90
+    h = h * h * np.pi / 2
+    d = np.arange(90) / 90 * np.pi / 2
+    phi = np.arange(180) / 180 * np.pi
+    H, D, PHI = np.meshgrid(h, d, phi, indexing="ij")
+    angles = np.stack((H.flatten(), D.flatten(), PHI.flatten()), axis=-1)
+    return angles  # (90*90*180, 3)
+
 
 def rotate_vector_around_axis(a, axis, theta):
     """

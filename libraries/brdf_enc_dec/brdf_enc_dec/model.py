@@ -253,7 +253,7 @@ class BRDFNPs:
             return
         if onlyEncoder:
             print("device:", device)
-            self.encoder = Encoder().to(device)
+            self.encoder = Encoder(cfg=cfg).to(device)
             print("loaded")
             _ = self.only_encoder_mode(checkpoint)
             self.encoder = self.encoder.to(device)

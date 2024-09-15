@@ -1,0 +1,15 @@
+{
+    "python.analysis.extraPaths": [
+        "/workspace/.venv/lib/python3.11/site-packages/",
+        "/mnt/d/kaggle/rsna2024/",
+        "/mnt/d/competition-rag/api_core",
+        "/mnt/d/competition-rag/app",
+        "/mnt/d/kaggle/rsna2024/rsna_lib",
+        "/mnt/d/kaggle/rsna2024/",
+        "/mnt/d/eccv_code/eccv2024-synthesizing-time-varying-BRDFs-via-latent-space/libraries",
+        "./libraries/slib",
+        "./libraries/TorranceSparrow",
+        "./libraries/staf",
+        "./libraries/brdf_enc_dec"
+    ]
+}

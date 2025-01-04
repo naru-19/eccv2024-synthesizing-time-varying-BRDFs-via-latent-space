@@ -1,12 +1,10 @@
 import argparse
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
+import torch
 from ntm.model import NTM
 from ntm.transfer import Transfer
-from tqdm import tqdm
 
 
 def main():
@@ -17,18 +15,17 @@ def main():
     parser.add_argument(
         "--out_dir",
         type=Path,
-        default="./transfer_result",
+        default="./output",
         help="output directory",
     )
     args = parser.parse_args()
     args.out_dir.mkdir(exist_ok=True, parents=True)
-    device = f"cuda:{args.gpu}"
+    device = f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu"
     tvnet = NTM(
         lr=1,
         in_features=10,
         out_features=10,
         device=device,
-        scheduler=None,
     )
     print(args)
     epoch = tvnet.load(args.model)
@@ -40,9 +37,17 @@ def main():
 
     rust_transfer = Transfer(tvnet)
     synth_result = rust_transfer.run(target_latent)
-    out_path = args.out_dir / f"{args.tgt.parent.stem}.npy"
+    if synth_result.shape[0] == 1:
+        # steel case (merl material)
+        # tile to 90000
+        synth_result = np.tile(synth_result, (90000, 1, 1))
+
+    out_path = args.out_dir / f"transferred.npy"
     print("out_path: ", out_path)
-    np.save(out_path, synth_result.cpu().numpy())
+    if device == "cpu":
+        np.save(out_path, synth_result)
+    else:
+        np.save(out_path, synth_result.cpu().numpy())
 
 
 if __name__ == "__main__":

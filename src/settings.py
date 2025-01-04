@@ -10,6 +10,9 @@ class Settings(BaseSettings):
 
     frames: int = 36
 
+    pot_norm_path: Path = dataset_dir / "env" / "potnorm.npy"
+    env_map_path: Path = dataset_dir / "env" / "env.pkl"
+
 
 def get_settings():
     return Settings()

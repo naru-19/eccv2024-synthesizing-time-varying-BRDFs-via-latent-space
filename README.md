@@ -2,10 +2,20 @@
 
 ## setup
 ```
-docker build --build-arg USERNAME=${username} \
-       --build-arg UID=${uid} \
-       --build-arg GROUPNAME=${groupname} \
-       --build-arg GID=${gid} \
-       -t repo-luna.ist.osaka-u.ac.jp:5000/${username}/${imagename}:${tag} .
+make run
+cd libraries/
+pip install -r requirements.txt
 ```
-All code will release soon
+
+### train/run script
+**compress tvbrdf into latent**
+```
+python3 compress_tvbrdf.py
+```
+
+**train ntm**
+```
+python3 train_ntm.py --case rust
+```
+
+

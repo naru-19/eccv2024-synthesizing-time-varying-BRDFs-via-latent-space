@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     dataset_dir: Path = Path(__file__).absolute().parent.parent / "resources"
     enc_dec_checkpoint: Path = dataset_dir / "model_weights/encdec/600k.pth"
 
+    frames: int = 36
+
 
 def get_settings():
     return Settings()

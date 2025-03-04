@@ -13,7 +13,7 @@ cd libraries && pip install -r requirements.txt
 ```
 ## setup
 
-download latens files from [google drive](https://drive.google.com/file/d/1XATLeXinE3jUW_T2dGBlS5Coc5iAz-FZ/view?usp=sharing)
+download latents files from [google drive](https://drive.google.com/file/d/1XATLeXinE3jUW_T2dGBlS5Coc5iAz-FZ/view?usp=sharing)
 ```
 make run
 cd libraries/

@@ -1,0 +1,1 @@
+g++ -shared -o env_api.so -fPIC env_api.cpp -std=c++17

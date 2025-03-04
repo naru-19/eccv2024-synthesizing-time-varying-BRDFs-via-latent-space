@@ -2,3 +2,8 @@
 -e brdf_enc_dec/
 -e TorranceSparrow/
 -e staf/
+-e localenv/
+-e render-utils/
+-e RusCoord/
+-e DisneyBSDF/
+-e hdr-render-v2/

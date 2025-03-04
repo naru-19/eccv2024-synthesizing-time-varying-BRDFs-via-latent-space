@@ -156,7 +156,7 @@ def main():
         in_features=train_dataset.dim,
         out_features=cfg.latent_dim,
         device=device,
-    )  # 適宜変える
+    )
     ntm.train()
     # training start
     train(
